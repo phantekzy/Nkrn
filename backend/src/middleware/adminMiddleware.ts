@@ -16,4 +16,9 @@ export const adminMiddleware = (
   if (!req.user) {
     return res.status(401).json({ error: "Authentification required" });
   }
+  if (req.user.role !== "admin") {
+    return res.status(403).json({
+      error: "Forbidden: You do not have administrative privileges",
+    });
+  }
 };
