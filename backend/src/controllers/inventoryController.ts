@@ -15,5 +15,8 @@ export const updateStock = async (req: Request, res: Response) => {
     const { id } = req.params as { id: string };
     const { quantity } = req.body;
     await inventoryService.adjustStock(id, quantity);
-  } catch (error) {}
+    res.json({ sucesss: true });
+  } catch (error) {
+    res.status(400).json({ error: "Update failed" });
+  }
 };
