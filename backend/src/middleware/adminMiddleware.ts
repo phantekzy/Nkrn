@@ -21,4 +21,5 @@ export const adminMiddleware = (
       error: "Forbidden: You do not have administrative privileges",
     });
   }
+  next();
 };
