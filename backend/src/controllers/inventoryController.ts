@@ -12,7 +12,8 @@ export const getInventory = async (req: Request, res: Response) => {
 
 export const updateStock = async (req: Request, res: Response) => {
   try {
-    const { id } = req.params;
+    const { id } = req.params as { id: string };
     const { quantity } = req.body;
+    await inventoryService.adjustStock(id, quantity);
   } catch (error) {}
 };

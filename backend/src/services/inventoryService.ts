@@ -1,4 +1,3 @@
-import { where } from "sequelize";
 import { Product } from "../models/Product";
 
 export const fetchAllProducts = async () => {
