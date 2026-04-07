@@ -5,5 +5,7 @@ export const getInventory = async (req: Request, res: Response) => {
   try {
     const products = await inventoryService.fetchAllProducts();
     res.json(products);
-  } catch (error) {}
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Errror" });
+  }
 };
