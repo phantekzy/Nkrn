@@ -18,7 +18,8 @@ const start = async () => {
       console.log(`Excess server is running on port ${PORT}`);
     });
   } catch (error) {
-    console.log(error);
+    console.error("Critical Failure during startup:", error);
+    process.exit(1);
   }
 };
 start();
