@@ -7,4 +7,9 @@ export const excessApi = async (
   const cleanBase = BASE_URL.replace(/\/$/, "");
   const cleanEndpoint = endpoint.startsWith("/") ? endpoint : `/${endpoint}`;
   const url = `${cleanBase}${cleanEndpoint}`;
+
+  const headers = {
+    "Content-Type": "application/json",
+    ...options.headers,
+  };
 };
