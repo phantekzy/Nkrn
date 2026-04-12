@@ -1,6 +1,8 @@
 const App = () => {
     return (
-        <div className="text-3xl">Excess</div>
+        <div>
+            // Letting the app.tsx for later
+        </div>
     )
 }
 
