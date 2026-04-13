@@ -1,3 +1,5 @@
+import { createContext, useState, type ReactNode } from "react";
+
 type Role = "admin" | "staff";
 
 interface User {
@@ -12,5 +14,11 @@ interface AuthContextType {
     token: string | null;
     login: (userData: User, token: string) => void;
     logout: () => void;
+}
+
+const AuthContext = createContext<AuthContextType | undefined>(undefined)
+
+export function AuthProvider({ children }: { children: ReactNode }) {
+    const [user, setUser] = useState<User | null>(null)
 }
 
